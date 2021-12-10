@@ -1,6 +1,6 @@
 <div class="mt-5" style=" margin-left: 10%; margin-right:15%;">
     <div class="card border-info mb-3" fgid="11555">
-        <div class="card-header fs-3 text-center" fgid="11561">Transfer Money</div>
+        <div class="card-header fs-3 text-center bg-warning" fgid="11561">Transfer Money</div>
         <div class="card-body">
             <form [formGroup]="transferForm" (ngSubmit)="handleTransaction()">
                 <div class="row ">
@@ -22,7 +22,7 @@
                         id="receiverbic"
                         name="receiverbic"
                         formControlName="receiverbic"
-                        autocomplete="off">
+                        autocomplete="off" required>
                         <div *ngIf="!rbic?.valid && rbic?.dirty " class="text-danger mt-2">
                             <div *ngIf="rbic.errors?.pattern">Should be Capital Alphanumeric</div>
                             <div *ngIf="rbic.errors?.required">ReceiverBIC is required</div>

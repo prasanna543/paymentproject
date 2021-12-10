@@ -62,8 +62,7 @@ public class TransactionController {
 	@Autowired
 	private TransactionRepository transactionrepo;
 
-//	@Autowired
-//	private BankContants bankconstants;
+
 
 	@GetMapping("/transfercharges")
 	public double getTransferCharges() {
@@ -88,7 +87,7 @@ public class TransactionController {
 		char rtransfertype = checkTransferType(receivercustomerid);
 
 		if (stransfertype == 'C' && rtransfertype == 'B') {
-			list.add("You cannot transfer to a Bank. Please enter Customer's customerid");
+			list.add("You cannot transfer to a Bank. Please enter customerid");
 
 			return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(list);
 		} else if (stransfertype == 'B' && rtransfertype == 'C') {
